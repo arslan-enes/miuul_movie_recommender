@@ -54,7 +54,7 @@ graph_tab.dataframe(meta.loc[meta.genres_x.str.contains(selected_genre), ['title
 
 # recommendation_tab
 
-r_col1, r_col2, r_col3 = recommendation_tab.column([1,2,1])
+r_col1, r_col2, r_col3 = recommendation_tab.columns([1,2,1])
 selected_movie = r_col2.selectbox("Film seçiniz.", options=meta.title.unique())
 recommendations = user.corrwith(user[selected_movie]).sort_values(ascending=False)[1:6]
 
